@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding-top: 10%;
+  opacity: 0.8;
+}
+body {
+  width: 100wh;
+  height: 90vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+body .sexy_field {
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100px;
+  right: 0;
+  font-family: "Oswald", sans-serif;
+  width: 300px;
+}
+body lable {
+  font-size: 30px;
+  position: absolute;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.26);
+  height: 100px;
+  left: 0;
+  width: 400px;
+  color: white;
+  top: 23px;
+  z-index: -1;
+  transition-duration: 0.2s;
+  transition-property: transform;
+}
+body input {
+  border: none;
+  padding: 40px 0px 20px 0px;
+  box-shadow: 0px 3px white, 0px 5px rgba(0, 0, 0, 0.16);
+  color: white;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.26);
+  background: transparent;
+  outline: none;
+  height: 30px;
+  font-family: "Oswald", sans-serif;
+  width: 300px;
+  transition-property: transform;
+  font-size: 26px;
+}
+body input:focus + lable {
+  transform: translateY(-45px) translateX(-80px) scale(0.6);
+}
+body input:valid + lable {
+  transform: translateY(-45px) translateX(-80px) scale(0.6);
+}
+body input:valid + lable::after {
+  display: block;
+  transform: translateX(-10px) rotate(-45deg);
+}
+body input:invalid + lable::after {
+  transform: translateX(100px) rotate(-45deg);
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+h1,
+h6 {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  left: 0;
+}
