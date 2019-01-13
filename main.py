@@ -1,23 +1,28 @@
-import datascience
 from ytcc.download import Download
 from textblob import TextBlob
 from clarifai.errors import ApiError
 from clarifai.rest import ClarifaiApp
 from pytube import YouTube
+import os
+from flask import Flask, url_for, render_template, request, jsonify
+from flask import *
+
+app = Flask(__name__)
 
 SAVE_PATH = "C:/Users/Stanley/Desktop/SBHacks-2019/videos"
-link = "https://www.youtube.com/watch?v=oBuntAGseyk"
+link = "https://www.youtube.com/watch?v=kt09W17edIk"
 yt = YouTube(link)
 stream = yt.streams.filter(file_extension='mp4').first()
 stream.download(SAVE_PATH)
-title = yt.title
+title = yt.title + ".mp4"
+title = title.replace("|", "")
+title = title.replace(":", "")
 
 myApi = '32256d518ae94e9597fe852eb356250a'
 app = ClarifaiApp(api_key=myApi)
 
 arraylink = link.split("=")
-print(arraylink)
-video_id = 'oBuntAGseyk'
+video_id = arraylink[1]
 download = Download()
 captions = download.get_captions(video_id)
 sentiment = TextBlob(captions)
@@ -29,9 +34,9 @@ print(title)
 
 m = app.public_models.general_model
 try:
-    response = m.predict_by_filename('C:/Users/Stanley/Desktop/SBHacks-2019/videos/' + title,
+    response = m.predict_by_filename("C:/Users/Stanley/Desktop/SBHacks-2019/videos/" + title,
                                      is_video=True,
-                                     sample_ms=1000)
+                                     sample_ms=10000)
 except ApiError as e:
     print('Error status code: %d' % e.error_code)
     print('Error description: %s' % e.error_desc)
