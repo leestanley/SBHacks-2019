@@ -1,5 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
+.content2 {
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100px;
+  right: 0;
+  font-family: "Oswald", sans-serif;
+  width: 300px;
+}
+.form-field {
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100px;
+  right: 0;
+  font-family: "Oswald", sans-serif;
+  width: 300px;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -17,6 +42,15 @@ body {
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
+}
+footer {
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2%;
+  font-size: 14px;
+  opacity: .8;
 }
 
 body .sexy_field {

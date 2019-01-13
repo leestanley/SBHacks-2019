@@ -1,0 +1,32 @@
+html, body, .grid-container { height: 100%; margin: 0;
+    overflow-y: scroll;
+}
+
+.grid-container * {
+ border: 1px solid red;
+ position: relative;
+}
+
+.grid-container *:after {
+ content:attr(class);
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "main main main" "main main main" "sentiment video-analysis etc";
+}
+
+.main { grid-area: main;
+    overflow-y: scroll;
+}
+
+.sentiment { grid-area: sentiment; }
+
+.video-analysis { grid-area: video-analysis; }
+
+.etc { grid-area: etc; }

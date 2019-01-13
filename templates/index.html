@@ -14,12 +14,14 @@
 </head>
 <body>
 <img src="{{ url_for('static', filename='icon.png') }}" class="center">
-<div class='sexy_field'>
-  <input required='required'>
-  <lable>
-    Enter Youtube URL
-  </lable>
+<form class="form form-animate-fields" action="/results">
+    <div class="content2">
+        <div class="form-field">
+            <input class="form-input" type="Url" name="inputname" id="inputname" placeholder="Place Youtube URL" textarea spellcheck="false">
+</form>
 </div>
-</div>
+<footer>
+  <p><font color="white">Created by Stanley Lee at SB Hacks 2019 | <a href="https://github.com/leestanley">https://github.com/leestanley</a></font></p>
+</footer>
 </body>
 </html>
