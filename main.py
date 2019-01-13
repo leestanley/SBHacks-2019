@@ -7,12 +7,7 @@ from pytube import YouTube
 
 SAVE_PATH = "C:/Users/Stanley/Desktop/SBHacks-2019/videos"
 link = "https://www.youtube.com/watch?v=oBuntAGseyk"
-try:
-    # object creation using YouTube which was imported in the beginning
-    yt = YouTube(link)
-    print("Success")
-except:
-    print("Connection Error")  # to handle exception
+yt = YouTube(link)
 stream = yt.streams.filter(file_extension='mp4').first()
 stream.download(SAVE_PATH)
 title = yt.title
