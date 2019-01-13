@@ -8,19 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<div class="grid-container">
-  <div class="main"></div>
-  <p> {{ content1 }} </p>
-  <div class="sentiment"></div>
-
-  <div class="video-analysis"></div>
-
-  <div class="etc"></div>
+<div class="scroll-bar-wrap">
+  <div class="scroll-box">
+    <h1>Captions</h1>
+    <p> {{content1 }} </p>
+  </div>
+  <div class="cover-bar"></div>
+</div>
+<div class="scroll-bar-wrap">
+  <div class="scroll-box">
+    <h1>Sentiment Analysis</h1>
+    <p> {{content2 }} </p>
+  </div>
+  <div class="cover-bar"></div>
+</div>
+<div class="scroll-bar-wrap">
+  <div class="scroll-box">
+    <h1>Video Analysis</h1>
+    <ul>
+      <li>{{content3 }}</li>
+      <li>{{content4 }}</li>
+      <li>{{content5 }}</li>
+      <li>{{content6 }}</li>
+      <li>{{content7 }}</li>
+    </ul>
+  </div>
+  <div class="cover-bar"></div>
 </div>
 </body>
 </html>

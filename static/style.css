@@ -11,6 +11,7 @@
   right: 0;
   font-family: "Oswald", sans-serif;
   width: 300px;
+
 }
 .form-field {
   margin: auto;
@@ -23,6 +24,7 @@
   right: 0;
   font-family: "Oswald", sans-serif;
   width: 300px;
+  padding-top: 10%;
 }
 
 .center {
@@ -43,15 +45,14 @@ body {
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
 }
-footer {
+/*footer {
   display: table;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2%;
   font-size: 14px;
   opacity: .8;
-}
+}*/
 
 body .sexy_field {
   margin: auto;

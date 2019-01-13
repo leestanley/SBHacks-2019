@@ -38,9 +38,8 @@ def results():
     sentiment = TextBlob(captions)
     captions = captions.replace("[Music]", "")
     captions = captions.replace("  ", ". ")
-    print(captions)
-    print("Sentiment Score: ", sentiment.sentiment.polarity)
-    print(title)
+    score = sentiment.sentiment.polarity
+    score = str(score)
 
     m = clarifail.public_models.general_model
     try:
@@ -69,8 +68,8 @@ def results():
 
     for x in range(5):
         print(final[x])
-    return render_template('results.html', content1=captions,)
+    return render_template('results.html', content1=captions, content2=score, content3=str(final[0][0]), content4=str(final[1][0]), content5=str(final[2][0]), content6=str(final[3][0]), content7=str(final[4][0]))
 
 
 if __name__ == "__main__":
-    app.run(port=5027, debug=True)
+    app.run(port=5036, debug=True)

@@ -1,32 +1,47 @@
-html, body, .grid-container { height: 100%; margin: 0;
-    overflow-y: scroll;
+
+
+body {
+  background-color: #ffe4b7;
 }
 
-.grid-container * {
- border: 1px solid red;
- position: relative;
+p {
+  font-family: roboto;
+  line-height: 1.4;
+  margin: 0 0 .5em;
 }
-
-.grid-container *:after {
- content:attr(class);
- position: absolute;
- top: 0;
- left: 0;
+.scroll-bar-wrap {
+  width: 60%;
+  position: relative;
+  margin: 2em auto;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "main main main" "main main main" "sentiment video-analysis etc";
+.scroll-box {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
 }
-
-.main { grid-area: main;
-    overflow-y: scroll;
+.scroll-box::-webkit-scrollbar {
+  width: .4em;
 }
-
-.sentiment { grid-area: sentiment; }
-
-.video-analysis { grid-area: video-analysis; }
-
-.etc { grid-area: etc; }
+.scroll-box::-webkit-scrollbar,
+.scroll-box::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2);
+}
+.cover-bar {
+  position: absolute;
+  background: #fff;;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: .4em;
+  -webkit-transition: all .5s;
+  opacity: 1;
+}
+/* MAGIC HAPPENS HERE */
+.scroll-bar-wrap:hover .cover-bar {
+   opacity: 0;
+  -webkit-transition: all .5s;
+}
